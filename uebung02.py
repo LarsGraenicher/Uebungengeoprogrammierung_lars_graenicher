@@ -53,9 +53,13 @@ class Vector3:
             return Vector3(self.x*multiplicator, self.y*multiplicator, self.z*multiplicator)
 
     def cross(self, b):
+        if not type(b) == Vector3:
+            raise TypeError("Parameter has to be type Vector3")
         return Vector3(self.y*b.z-self.z*b.y, self.z*b.x-self.x*b.z,self.x*b.y-self.y*b.x)
     
     def dot(self, b):
+        if not type(b) == Vector3:
+            raise TypeError("Parameter has to be type Vector3")
         return self.x*b.x+self.y*b.y+self.z*b.z
     
     def normalize(self):
